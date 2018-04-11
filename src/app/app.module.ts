@@ -6,11 +6,16 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { ErrorPage } from '../pages/error/error';
+
+import { SQLite } from '@ionic-native/sqlite';
+import { DataService } from '../services/data';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    ErrorPage
   ],
   imports: [
     BrowserModule,
@@ -19,11 +24,14 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    ErrorPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    SQLite,
+    DataService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
