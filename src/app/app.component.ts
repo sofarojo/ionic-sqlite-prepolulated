@@ -14,7 +14,7 @@ export class MyApp {
   rootPage:any;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,
-    private dataService: DataService, private sqlite: SQLite) {
+    private dataService: DataService, public sqlite: SQLite) {
     platform.ready().then(() => {
       statusBar.styleDefault();
       splashScreen.hide();
@@ -45,7 +45,6 @@ export class MyApp {
         .catch(e => {
           reject();
         });
-
     });
   }
 }
